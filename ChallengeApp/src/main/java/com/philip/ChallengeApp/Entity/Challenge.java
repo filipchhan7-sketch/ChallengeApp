@@ -1,9 +1,20 @@
-package com.philip.ChallengeApp;
+package com.philip.ChallengeApp.Entity;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "challenges")
 public class Challenge {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     private Long id;
     private String month;
     private String description;
+
+    public Challenge(){
+    }
 
     public Challenge(Long id, String month, String description) {
         this.id = id;
